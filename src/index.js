@@ -9,7 +9,7 @@ const mongoose = require("mongoose");
 const mongoSanitize = require("express-mongo-sanitize");
 const xss = require("xss-clean");
 
-// NOTE: importing neccessary files/moules...
+// NOTE: importing neccessary files/moules....
 const connectDB = require("./config/databaseConnection");
 const { catchAsync } = require("./utils/errors/catchAsync.js");
 const handleResponse = require("./utils/response/response");
