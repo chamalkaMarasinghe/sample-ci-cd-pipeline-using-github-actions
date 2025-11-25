@@ -29,4 +29,4 @@ jobs:
     - run: |
         touch .env
         echo "${{ secrets.ALL_SECRET_ENV }}" > .env
-    # - run: pm2 restart BackendAPI
+    - run: pm2 restart index
