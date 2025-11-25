@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const useragent = require("express-useragent");
 const cors = require("cors");
-const debug = require("debug")("tasker-api");
+const debug = require("debug")("workflow-api");
 const mongoose = require("mongoose");
 const mongoSanitize = require("express-mongo-sanitize");
 const xss = require("xss-clean");
@@ -115,7 +115,7 @@ http.listen(PORT, async function () {
 
   try {
     await connectDB();
-    
+
     // NOTE: startup logics =============================
     await startupMethod();
     console.log(`Server listening on port ${PORT}`);
