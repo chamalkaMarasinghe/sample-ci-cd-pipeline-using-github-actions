@@ -48,40 +48,6 @@ exports.startupMethod = async () => {
         } else {
             console.log("All document counters found in this database")
         }
-
-        /* 2). ================================== CREATING THE SUPER ADMIN USER IF THIS NOT EXISTS IN THE DATABASE =======================================*/
-        /*
-        // checking if the super admin record is already exists or not
-        const superAdminUser = await ServiceProvider.findOne({roles: { $in: [`${roles.ADMIN}`]}});
-
-        // if the super admin record is already not exists in the database..
-        // creating the new super admin user according to the provided information in the .env file         
-        if (!superAdminUser) {
-
-            const newId = await getNewID(documentCounters.SERVICE_PRO);
-
-            if(!newId){
-                console.log("ID Generation");
-            }
-
-            const newSuperAdmin = await ServiceProvider.create({
-                id: newId,
-                firstName: ADMIN_FIRST_NAME,
-                lastName: ADMIN_LAST_NAME,
-                email: ADMIN_EMAIL,
-                roles: [roles.ADMIN],
-                password: ADMIN_PASSWORD,
-            })
-
-            if (newSuperAdmin) {
-                console.log("SUPER ADMIN not exists in this database. New Admin user was created");
-            } else {
-                console.log("SUPER ADMIN not exists in this database. New Admin user was created. But error Occurred during fetching the newly created admin user");
-            }
-        } else {
-            console.log("SUPER ADMIN already exists in this database");
-        }
-        */
     } catch (error) {
         console.log("Error Occurred In Startup Method");
         console.log(error);

@@ -28,13 +28,9 @@ const {
   RecordNotFoundError,
 } = require("./utils/errors/CustomErrors");
 const { environmentTypes } = require("./constants/commonConstants.js");
-const { log } = require("console");
 
 const PORT = currentEnvironment.PORT;
 const CLIENT = currentEnvironment.CLIENT;
-const ADMIN = currentEnvironment.ADMIN;
-const SERVICE_PROVIDER = currentEnvironment.SERVICE_PROVIDER;
-const ENVIRONMENT = currentEnvironment.ENVIRONMENT;
 
 const app = express();
 
@@ -98,7 +94,7 @@ const http = require("http").Server(app);
 
 const socketIO = require("socket.io")(http, {
   cors: {
-    origin: [`${CLIENT}`, `${ADMIN}`, `${SERVICE_PROVIDER}`],
+    origin: [`${CLIENT}`],
   },
 });
 
