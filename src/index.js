@@ -64,7 +64,7 @@ app.use(
 );
 
 // NOTE: testing route: verifing the api running or not
-app.get("/", async (req, res, next) => {
+app.get("/api", async (req, res, next) => {
   try {
     return handleResponse(res, 200, "Welcome to workflow testing API !");
   } catch (error) {
