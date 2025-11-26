@@ -26,7 +26,8 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-present
-    - run: |
-        touch .env
-        echo "${{ secrets.ALL_SECRET_ENV }}" > .env
+    - name: Create .env file
+      run: |
+        printf "%s" "${{ secrets.ALL_SECRET_ENV }}" > .env
+
     - run: pm2 restart index
