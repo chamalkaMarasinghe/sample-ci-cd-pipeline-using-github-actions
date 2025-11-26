@@ -66,7 +66,7 @@ app.use(
 // NOTE: testing route: verifing the api running or not
 app.get("/api", async (req, res, next) => {
   try {
-    return handleResponse(res, 200, "Welcome to workflow testing API !");
+    return handleResponse(res, 200, `Welcome to workflow testing API ! \n API is running successfully \n sec var: ${process.env.MYNAM}`);
   } catch (error) {
     return next(error);
   }
